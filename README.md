@@ -1,4 +1,4 @@
-# A Novel ML classifier using Modern Hopfield Neural Networks
+#  Hopfield_Classifier: A Novel ML classifier using Modern Hopfield Neural Networks 
 
 Mohamed Abdelkarim<sup>1</sup>, Hanan Ahmed Kamal<sup>2</sup>, Doaa Shawky<sup>2</sup>
 
@@ -19,7 +19,6 @@ reported for HNN classifiers to the best of our knowledge, achieving 96\% accura
 
 The full paper is available at:
 
-## Hopfield_Classifier
 
 ## Requirements
 
