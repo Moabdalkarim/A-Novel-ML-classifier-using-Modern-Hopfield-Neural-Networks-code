@@ -112,7 +112,7 @@ predictions = hnn.predict(x_test, silent=False)
 
 print(predictions)
 ```
-- `Example google-colab notebook`: [google-colab notebook](A-Novel-ML-classifier-using-Modern-Hopfield-Neural-Networks-code/Hopfield_Classifier.ipynb)
+- `Example google-colab notebook`: [google-colab notebook](Hopfield_Classifier.ipynb)
   
 ## License
 
