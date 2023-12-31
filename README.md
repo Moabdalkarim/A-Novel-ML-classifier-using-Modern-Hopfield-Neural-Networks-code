@@ -19,6 +19,8 @@ reported for HNN classifiers to the best of our knowledge, achieving 96\% accura
 
 The full paper is available at:
 
+## Hopfield_Classifier
+
 ## Requirements
 
 The software was developed and tested on google colab.
@@ -34,60 +36,85 @@ The recommended way to install the software is to use `pip/pip3`:
 $ pip3 install git+https://github.com/ml-jku/hopular
 ```
 
+
+## Installation
+
+```python
+import cupy as np
+from hopfield_classifier import Hopfield_Classifier
+```
+
 ## Usage
 
-Hopular has two modes of operation:
+### Initialization
 
-- `list` for displaying various information.
-- `optim` for optimizing Hopular using specified hyperparameters.
-
-More information regarding the operation modes is accessible via the `-h` flag (or, alternatively, by `--help`).
-
-```bash
-$ hopular -h
+```python
+# Initialize the Hopfield Classifier
+# w_compress: weight compression factor (optional)
+# PCA: number of PCA components (optional)
+hnn = Hopfield_Classifier(w_compress=0.5, PCA=2)
 ```
 
-```bash
-$ hopular <mode> -h
+### Training
+
+```python
+# x_train: training data features
+# y_train: training data labels
+# silent: if True, suppresses print statements (optional)
+hnn.fit(x_train, y_train, silent=True)
 ```
 
-To display all available datasets, the `--datasets` flag has to be specified in the `list` mode.
+### Prediction
 
-```bash
-$ hopular list --datasets 
+```python
+# x_test: test data features
+# patch_size: size of the patch for energy computation (optional)
+# silent: if True, suppresses print statements (optional)
+predictions = hnn.predict(x_test, patch_size=-1, silent=True)
 ```
 
-Optimizing a Hopular model using the default hyperparameters is achieved by specifying the corresponding dataset in the
-`optim` mode.
+### Parameters
 
-```bash
-$ hopular optim --dataset <dataset_name>
+- `w_compress` (float, optional): Weight compression factor. Defaults to 0 (no compression).
+- `PCA` (int/float, optional): Number of PCA components/percetange variance to apply. Defaults to 0 (no PCA).
+
+### Methods
+
+- `fit(x_train, y_train, silent=True)`: Train the network using the provided training data.
+- `predict(x_test, patch_size=-1, silent=True)`: Predict the class of input instances.
+- `compute_energy_ext(input_state, patch_size=-1)`: Compute the energy of the network for an external input state.
+
+### Attributes
+
+- `weights`: The weights matrix of the network after training.
+- `pca_model`: The PCA model used for dimensionality reduction, if applicable.
+- `energies`: A list storing energies during the network's operation.
+
+## Example
+
+```python
+import cupy as np
+from hopfield_classifier import Hopfield_Classifier
+
+# Sample data
+x_train = np.array([...])  # Training data features
+y_train = np.array([...])  # Training data labels
+x_test = np.array([...])   # Test data features
+
+# Create Hopfield Classifier instance
+hnn = Hopfield_Classifier(w_compress=0.5, PCA=2)
+
+# Train the network
+hnn.fit(x_train, y_train, silent=False)
+
+# Predict using the network
+predictions = hnn.predict(x_test, silent=False)
+
+print(predictions)
 ```
-
-## Examples
-
-To optimize a Hopular model on the `GlassIdentificationDataset` using the default hyperparameters, only the dataset
-name itself needs to be specified. More details on the default values are available in the
-[console interface](hopular/interactive.py) implementation.
-
-```bash
-$ hopular optim --dataset "GlassIdentificationDataset"
-```
-
-Optimizing a smaller Hopular model on the `GlassIdentificationDataset` utilizing only `4` modern Hopfield networks, `2`
-iterative refinement blocks, and a scaling factor of `10` is achieved by manually specifying the respective
-hyperparameters.
-
-```bash
-$ hopular optim --dataset "GlassIdentificationDataset" --num_heads 4 --num_blocks 2 --scaling_factor 10
-```
-
-## Disclaimer
-
-The [datasets](hopular/auxiliary/resources), which are part of this repository, are publicly available and may be
-licensed differently. Hence, the [LICENSE](LICENSE) of this repository does not apply to them. More details on the
-origin of the datasets are available in the accompanying paper.
-
+- `Example google-colab notebook`: ??????????.
+  
 ## License
 
-This repository is MIT-style licensed (see [LICENSE](LICENSE)), except where noted otherwise.
+[MIT](https://choosealicense.com/licenses/mit/)
+
