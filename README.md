@@ -116,3 +116,7 @@ print(predictions)
 
 [MIT](LICENSE.md)
 
+## Note
+
+the Hopfield-classifier code is implemented to be run on a GPU machine only, another version to use CPU will be added soon.
+
