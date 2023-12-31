@@ -116,5 +116,5 @@ print(predictions)
   
 ## License
 
-[MIT](licence.md)
+[MIT](LICENSE.md)
 
