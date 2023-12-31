@@ -30,14 +30,12 @@ As the development environment, [Python](https://www.python.org) 3.10.12 in was 
 
 ## Installation
 
-The recommended way to install the software is to use `pip/pip3`:
+The recommended way to install the software is to use the git-repo :
 
 ```bash
-$ pip3 install git+https://github.com/ml-jku/hopular
+$ pip3 install 
 ```
 
-
-## Installation
 
 ```python
 import cupy as np
