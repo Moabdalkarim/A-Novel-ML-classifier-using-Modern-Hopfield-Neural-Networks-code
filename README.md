@@ -116,5 +116,5 @@ print(predictions)
   
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](licence.md)
 
