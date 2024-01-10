@@ -218,7 +218,7 @@ if GPU_flg:
           """
 
           # reshape and convert to cupy array
-          x_test = x_test.reshape(-1, reduce(lambda x, y: x * y, (x_train.shape[i] for i in range(1, len(x_train.shape)))))
+          x_test = x_test.reshape(-1, reduce(lambda x, y: x * y, (x_test.shape[i] for i in range(1, len(x_test.shape)))))
           x_test = cp.array(x_test)
 
           # Recording the start time for prediction
