@@ -391,7 +391,7 @@ else :
           """
 
           # reshape and convert to cupy array
-          x_train = x_train.reshape(-1, reduce(lambda x, y: x * y, (x_train.shape[i] for i in range(1, len(x_train.shape)))))
+          x_test = x_test.reshape(-1, reduce(lambda x, y: x * y, (x_test.shape[i] for i in range(1, len(x_test.shape)))))
           y_train=y_train.reshape((-1))
           x_train = np.array(x_train)
           y_train = np.array(y_train)
