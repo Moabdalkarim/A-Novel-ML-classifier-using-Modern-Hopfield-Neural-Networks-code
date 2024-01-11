@@ -29,16 +29,19 @@ As the development environment, [Python](https://www.python.org) 3.10.12 in was 
 
 ## Installation
 
-The recommended way to install the software is to use the git-repo :
+The recommended way to install the software is to use the git-repo. To install on google-colab:
 
-```bash
-$ pip3 install 
+```python
+import locale
+
+locale.getpreferredencoding = lambda: "UTF-8"
+!git clone https://github.com/Moabdalkarim/A-Novel-ML-classifier-using-Modern-Hopfield-Neural-Networks-code.git
+%cd /content/A-Novel-ML-classifier-using-Modern-Hopfield-Neural-Networks-code 
 ```
 
 
 ```python
-import cupy as np
-from hopfield_classifier import Hopfield_Classifier
+from Hopfield_classifier.classifier import Hopfield_Classifier
 ```
 
 ## Usage
@@ -58,7 +61,7 @@ hnn = Hopfield_Classifier(w_compress=0.5, PCA=2)
 # x_train: training data features
 # y_train: training data labels
 # silent: if True, suppresses print statements (optional)
-hnn.fit(x_train, y_train, silent=True)
+hnn.fit(x_train, y_train)
 ```
 
 ### Prediction
@@ -67,7 +70,7 @@ hnn.fit(x_train, y_train, silent=True)
 # x_test: test data features
 # patch_size: size of the patch for energy computation (optional)
 # silent: if True, suppresses print statements (optional)
-predictions = hnn.predict(x_test, patch_size=-1, silent=True)
+predictions = hnn.predict(x_test, patch_size=2000)
 ```
 
 ### Parameters
@@ -90,7 +93,6 @@ predictions = hnn.predict(x_test, patch_size=-1, silent=True)
 ## Example
 
 ```python
-import cupy as np
 from hopfield_classifier import Hopfield_Classifier
 
 # Sample data
