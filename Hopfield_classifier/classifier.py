@@ -12,7 +12,7 @@ try:
     print("GPU is available, using Hopfield_Classifier-GPU version")
 except ImportError:
     GPU_flg = False
-    print("GPU is available, using Hopfield_Classifier-GPU version")
+    print("GPU is not available, using Hopfield_Classifier-CPU version")
 
 
 class Hopfield_Classifier:
