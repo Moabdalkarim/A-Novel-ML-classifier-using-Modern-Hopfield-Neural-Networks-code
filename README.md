@@ -39,7 +39,6 @@ locale.getpreferredencoding = lambda: "UTF-8"
 %cd /content/A-Novel-ML-classifier-using-Modern-Hopfield-Neural-Networks-code 
 ```
 
-
 ```python
 from Hopfield_classifier.classifier import Hopfield_Classifier
 ```
@@ -93,7 +92,7 @@ predictions = hnn.predict(x_test, patch_size=2000)
 ## Example
 
 ```python
-from hopfield_classifier import Hopfield_Classifier
+from Hopfield_classifier.classifier import Hopfield_Classifier
 
 # Sample data
 x_train = np.array([...])  # Training data features
