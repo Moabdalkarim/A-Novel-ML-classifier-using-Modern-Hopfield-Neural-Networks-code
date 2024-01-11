@@ -1,5 +1,4 @@
 # Imports
-import cupy as cp  
 from scipy.special import logsumexp  
 from sklearn.decomposition import PCA  
 import time
@@ -16,9 +15,10 @@ def is_gpu_available_cupy():
     """
     try:
         # Attempt to create a small CuPy array and allocate it on the GPU
+        import cupy as cp
         _ = cp.array([1])
         return True
-    except cp.cuda.runtime.CUDARuntimeError:
+    except :
         return False
 
 
