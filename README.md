@@ -118,5 +118,5 @@ print(predictions)
 
 ## Note
 
-the Hopfield-classifier code is implemented to automatically search for GPU device to run the GPU-enabled version of the code, if not found CPU version will run.
+The Hopfield_classifier code is implemented to automatically search for GPU device to run the GPU-enabled version of the code, if not found CPU version will run.
 
