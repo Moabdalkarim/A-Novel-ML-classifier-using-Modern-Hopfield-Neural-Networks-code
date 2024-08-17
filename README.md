@@ -17,7 +17,7 @@ zero training time, making it suitable for resource-limited environments. It rep
 reported for HNN classifiers to the best of our knowledge, achieving 96\% accuracy on the MNIST dataset, a 36\% percentage improvement over previous models.
 
 
-The full paper is available at:
+The full paper is available at: https://ieeexplore.ieee.org/abstract/document/10586137?casa_token=aqbbNrbg77MAAAAA:Zaq4MgVx6eEfCo4phclk2RD9w_fHBi9vyHLBixutG7vL0MRM9v_RIfEQGQ7xqihNl__cNaU9E1E
 
 
 ## Requirements
